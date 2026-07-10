@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard de Monitoreo de Red</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">NetMonitor</div>
+    <div class="nav-estado">
+      <span class="punto-verde"></span>
+      Red operativa
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="encabezado">
+      <h1>Panel de Monitoreo</h1>
+      <p>Actualización en tiempo real cada 3 segundos</p>
+    </div>
+
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <div class="tarjeta-icono">🖥️</div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-label">Dispositivos Online</span>
+          <span class="tarjeta-valor" id="stat-online">0</span>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <div class="tarjeta-icono">📶</div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-label">Tráfico Actual</span>
+          <span class="tarjeta-valor" id="stat-trafico">0 Mbps</span>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <div class="tarjeta-icono">⚡</div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-label">Latencia Promedio</span>
+          <span class="tarjeta-valor" id="stat-latencia">0 ms</span>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <div class="tarjeta-icono">🛡️</div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-label">Uptime</span>
+          <span class="tarjeta-valor" id="stat-uptime">99.9%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-grafico">
+      <div class="panel-header">
+        <h2>Tráfico de Red</h2>
+        <span class="badge-live">● EN VIVO</span>
+      </div>
+      <canvas id="grafico"></canvas>
+    </div>
+
+    <div class="panel-tabla">
+      <div class="panel-header">
+        <h2>Dispositivos en la Red</h2>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Dispositivo</th>
+            <th>IP</th>
+            <th>Latencia</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-dispositivos">
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
